@@ -1,5 +1,7 @@
 'use strict'
 
+const UserController = require('../app/Controllers/Http/UserController')
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -16,6 +18,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+Route.group(() => {
+  Route.post('auth/register', 'UserController.register')
 })
+  .prefix('api')
