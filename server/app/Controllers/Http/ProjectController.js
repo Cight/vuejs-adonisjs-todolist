@@ -3,7 +3,7 @@
 const Project = use('App/Models/Project')
 
 class ProjectController {
-    // returns all projects associated with user
+    // returns "indexing" all projects associated with user
     async index({ auth }) {
         const user = await auth.getUser()
         return await user.projects().fetch()
