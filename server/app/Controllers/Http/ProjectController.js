@@ -22,7 +22,7 @@ class ProjectController {
         return project
     }
 
-    async destroy({ auth, request, params }) {
+    async destroy({ auth, params }) {
         const user = await auth.getUser()
         const { id } = params
         const project = await Project.find(id)
